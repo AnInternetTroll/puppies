@@ -1,0 +1,15 @@
+nav
+	ul
+		- var pages = {"Home": "/", "Dogs": "/dogs", "About": "/about"}
+		each menu, key in pages
+			if (key == pageName)
+				li.active.left
+					a(href=`${menu}`)= key
+			else
+				li.left
+					a(href=`${menu}`)= key
+		li.right
+			a
+				label.switch
+					input(type="checkbox", id="colorPreferance")
+					span.slider.round(id=slider)
