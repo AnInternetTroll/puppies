@@ -1,5 +1,9 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
+	div.home
+		h1 Home
+		p Welcome to puppies.com. On this website we love puppies a lot. 
+	div#callToAction
+		p Want to get into the meat?
+		button(onclick="location.href = '/dogs'") Press here!

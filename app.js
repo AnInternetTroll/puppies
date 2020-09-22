@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const compression = require("compression");
 const sassMiddleware = require("node-sass-middleware");
 const minify = require("express-minify");
 
@@ -10,6 +11,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dogsRouter = require("./routes/dogs");
 const aboutRouter = require("./routes/about");
+const topRouter = require("./routes/top");
 
 const app = express();
 
@@ -20,6 +22,7 @@ app.set("view engine", "pug");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(compression());
 app.use(cookieParser());
 app.use(
 	sassMiddleware({
@@ -31,28 +34,14 @@ app.use(
 		sourceMap: true,
 	})
 );
-app.use(
-	minify({
-		cache: true,
-		uglifyJsModule: null,
-		errorHandler: null,
-		/*
-		jsMatch: /javascript/,
-		cssMatch: /css/,
-		jsonMatch: /json/,
-		sassMatch: /scss/,
-		lessMatch: /less/,
-		stylusMatch: /stylus/,
-		coffeeScriptMatch: /coffeescript/,
-		*/
-	})
-);
+app.use(minify({ cache: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/dogs", dogsRouter);
 app.use("/about", aboutRouter);
+app.use("/top", topRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
