@@ -1,14 +1,19 @@
 nav
-	ul
-		- var pages = {"Home": "/", "Dogs": "/dogs", "About": "/about"}
+	div.nav
+		- var pages = {"Home": "/", "About": "/about"}
 		each menu, key in pages
 			if (key == pageName)
-				li.active.left
+				div.active.left.nav-item
 					a(href=`${menu}`)= key
 			else
-				li.left
+				div.left.nav-item
 					a(href=`${menu}`)= key
-		li.right
+		div#dropdown.left.nav-item
+			a Doggos ⏬
+			div#dropdown_menu(style="display: none")
+				a(href="/dogs") Top 10
+				a(href="/top") Top 3
+		div.right.nav-item
 			a
 				label.switch
 					input(type="checkbox", id="colorPreferance")

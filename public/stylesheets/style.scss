@@ -9,26 +9,32 @@ body {
 	padding: 50px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 	nav {
-		ul {
-			list-style-type: none;
+		div.nav {
+			display: inline-block;
+			position: relative;
 			margin: 0;
 			padding: 0;
-			overflow: hidden;
 			background-color: #333;
+			width: 100%;
 			/* Safari */
 			position: -webkit-sticky;
 			position: sticky;
+			-webkit-user-select: none; /* Safari */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+			user-select: none; /* Standard */
 			top: 0;
 		}
-		li.left {
+		div.left {
 			float: left;
 		}
-		li.right {
+		div.right {
 			float: right;
 		}
-		li {
+		div.nav-item {
+			cursor: pointer;
 			a {
-				display: block;
+				display: inline-block;
 				color: white;
 				text-align: center;
 				padding: 14px 16px;
@@ -36,6 +42,13 @@ body {
 			}
 			a:hover {
 				background-color: #111;
+			}
+			#dropdown_menu {
+				position: relative;
+				background-color: #333;
+				a {
+					display: block;
+				}
 			}
 		}
 		.active {
@@ -144,15 +157,17 @@ body {
 		div {
 			display: inline-block;
 			position: relative;
-			margin: 1rem;
+			margin: 2rem;
 			padding: 14px;
 			img {
+				width: 20vw;
 				height: auto;
-				width: 15vw;
 			}
 		}
+		div:hover {
+			box-shadow: 5px 10px 8px 10px #111111;
+		}
 		#top1 {
-			right: auto;
 			background-color: yellow;
 		}
 		#top2 {
@@ -161,7 +176,7 @@ body {
 			background-color: blue;
 		}
 		#top3 {
-			top: 1rem;
+			top: 8rem;
 			float: right;
 			background-color: green;
 		}
@@ -187,7 +202,7 @@ body {
 		position: static;
 		bottom: 1px;
 		width: 100%;
-		height: 100%;
+		height: 3rem;
 		padding: 5px;
 		text-align: center;
 		font-size: 10px;

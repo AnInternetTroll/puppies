@@ -1,3 +1,4 @@
+// Color changing
 function colorChange() {
 	//Find the button which will be checked if it's checked or not
 	const colorPreferance = document.getElementById("colorPreferance");
@@ -69,3 +70,13 @@ if (preferedColorScheme == "Dark") {
 document
 	.getElementById("colorPreferance")
 	.addEventListener("click", colorChange, true);
+
+// Dropdown
+const dropdown_menu = document.getElementById("dropdown_menu");
+document.getElementById("dropdown").addEventListener("click", () => {
+	if (dropdown_menu.style.display == "block") {
+		dropdown_menu.style.display = "none";
+	} else if (dropdown_menu.style.display == "none") {
+		dropdown_menu.style.display = "block";
+	}
+});
