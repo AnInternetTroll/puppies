@@ -84,8 +84,8 @@ document.getElementById("dropdown").addEventListener("click", () => {
 // Page specific
 if (location.pathname === "/") {
 	fetch("https://dog.ceo/api/breeds/image/random")
-		.then(response => response.json())
+		.then((response) => response.json())
 		.then((data) => {
 			document.getElementById("img").setAttribute("src", data.message);
-		})
+		});
 }

@@ -8,13 +8,20 @@ nav
 			else
 				div.left.nav-item
 					a(href=`${menu}`)= key
-		div#dropdown.left.nav-item
-			a Doggos ⏬
-			div#dropdown_menu(style="display: none")
-				a(href="/dogs") Top 10
-				a(href="/top") Top 3
+		if (pageName == "Dogs" || pageName == "Top")
+			div#dropdown.left.nav-item.active
+				a Doggos ⏬
+				div#dropdown_menu(style="display: none")
+					a(href="/dogs") Top 10
+					a(href="/top") Top 3
+		else
+			div#dropdown.left.nav-item
+				a Doggos ⏬
+				div#dropdown_menu(style="display: none")
+					a(href="/dogs") Top 10
+					a(href="/top") Top 3
 		div.right.nav-item
-			a
+			a.switchA
 				label.switch
 					input(type="checkbox", id="colorPreferance")
 					span.slider.round(id=slider)

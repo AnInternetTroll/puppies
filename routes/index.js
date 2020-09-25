@@ -10,4 +10,16 @@ router.get("/home", function (req, res, next) {
 	res.redirect("/");
 });
 
+router.get("/dogs", function (req, res, next) {
+	res.render("dogs", { pageName: "Dogs" });
+});
+
+router.get("/top", function (req, res, next) {
+	res.render("top", { pageName: "Top 3" });
+});
+
+router.get("/about", function (req, res, next) {
+	res.render("about", { pageName: "About" });
+});
+
 module.exports = router;
