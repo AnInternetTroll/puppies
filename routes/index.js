@@ -1,9 +1,17 @@
 const express = require("express");
 const router = express.Router();
-
+const fetch = require("node-fetch");
 /* GET home page. */
 router.get("/", function (req, res, next) {
-	res.render("index", { title: "Express", pageName: "Home" });
+	fetch("https://dog.ceo/api/breeds/image/random")
+		.then((response) => response.json())
+		.then((data) => data.message)
+		.then((img) => {
+			res.render("index", {
+				background_image: `url(${img})`,
+				pageName: "Home",
+			});
+		});
 });
 
 router.get("/home", function (req, res, next) {

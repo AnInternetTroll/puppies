@@ -38,7 +38,7 @@ app.use(minify({ cache: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(function (req, res, next) {
-	logs = req.app.get('config');
+	logs = req.app.get("config");
 	logs.push({
 		ip: req.ip,
 		time: Date.now(),

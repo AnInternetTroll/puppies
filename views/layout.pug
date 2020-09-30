@@ -7,7 +7,7 @@ html(lang="en")
 		meta(property="og:title" content=pageName)
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		div(id="colorScheme")
-	body
+	body(style={"background-image": background_image})
 		include nav.pug
 		block content
 		include footer.pug

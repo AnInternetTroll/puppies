@@ -80,12 +80,3 @@ document.getElementById("dropdown").addEventListener("click", () => {
 		dropdown_menu.style.display = "block";
 	}
 });
-
-// Page specific
-if (location.pathname === "/") {
-	fetch("https://dog.ceo/api/breeds/image/random")
-		.then((response) => response.json())
-		.then((data) => {
-			document.getElementById("img").setAttribute("src", data.message);
-		});
-}
