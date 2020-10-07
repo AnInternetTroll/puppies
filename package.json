@@ -23,5 +23,11 @@
 	},
 	"prettier": {
 		"useTabs": true
+	},
+	"nodemonConfig": {
+		"ignore": [
+			"data/*",
+			"public/*"
+		]
 	}
 }

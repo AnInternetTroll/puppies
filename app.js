@@ -10,10 +10,13 @@ const fs = require("fs");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-
+try {
+	global.users = require("./data/users.json");
+} catch (e) {
+	global.users = [];
+}
 var app = express();
-
-app.set("config", []);
+app.set("config", global.users);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -28,7 +31,7 @@ app.use(
 	sassMiddleware({
 		src: path.join(__dirname, "public"),
 		dest: path.join(__dirname, "public"),
-		debug: true,
+		debug: false,
 		outputStyle: "compressed",
 		//indentedSyntax: true, // true = .sass and false = .scss
 		sourceMap: true,
@@ -44,6 +47,16 @@ app.use(function (req, res, next) {
 		time: Date.now(),
 		url: req.url,
 	});
+	try {
+		fs.writeFile(
+			"./data/users.json",
+			JSON.stringify(logs, null, "\t"),
+			(err) => {
+				if (err) throw err;
+				console.log("It's saved!");
+			}
+		);
+	} catch (e) {}
 	next();
 });
 
