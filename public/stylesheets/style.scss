@@ -13,13 +13,10 @@ body {
 	nav {
 		div.nav {
 			display: inline-block;
-			position: relative;
 			margin: 0;
 			padding: 0;
 			background-color: #333;
 			width: 100%;
-			/* Safari */
-			position: -webkit-sticky;
 			position: sticky;
 			-webkit-user-select: none; /* Safari */
 			-moz-user-select: none; /* Firefox */
@@ -183,14 +180,18 @@ body {
 			/* Standard */
 			width: fit-content;
 			height: fit-content;
-
+			transform-origin: center;
 			img {
+				transition: width 0.5s ease-in-out;
 				width: 20vw;
 				height: auto;
 			}
 		}
 		div:hover {
 			box-shadow: 5px 10px 8px 10px #111111;
+			img {
+				width: 30vw;
+			}
 		}
 		#top1 {
 			grid-column: 2 / 2;
