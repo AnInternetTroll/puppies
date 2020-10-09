@@ -4,7 +4,8 @@
 	"private": true,
 	"scripts": {
 		"start": "nodemon ./bin/www",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"pack": "zip -r lucaMateiPintilie.zip ./* -x node_modules\\*"
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
