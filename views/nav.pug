@@ -1,27 +1,27 @@
 nav
-	div.nav
-		- var pages = {"Home": "/", "About": "/about"}
+	.nav
+		- var pages = { Home: '/', About: '/about' };
 		each menu, key in pages
 			if (key == pageName)
-				div.active.left.nav-item
+				.active.left.nav-item
 					a(href=`${menu}`)= key
 			else
-				div.left.nav-item
+				.left.nav-item
 					a(href=`${menu}`)= key
 		if (pageName == "Dogs" || pageName == "Top 3")
-			div#dropdown.left.nav-item.active
+			#dropdown.left.nav-item.active
 				a Doggos ⏬
-				div#dropdown_menu(style="display: none")
+				#dropdown_menu(style="display: none")
 					a(href="/dogs") Top 10
 					a(href="/top") Top 3
 		else
-			div#dropdown.left.nav-item
+			#dropdown.left.nav-item
 				a Doggos ⏬
-				div#dropdown_menu(style="display: none")
+				#dropdown_menu(style="display: none")
 					a(href="/dogs") Top 10
 					a(href="/top") Top 3
-		div.right.nav-item
+		.right.nav-item
 			a.switchA
 				label.switch
-					input(type="checkbox", id="colorPreferance")
+					input#colorPreferance(type="checkbox")
 					span.slider.round(id=slider)
