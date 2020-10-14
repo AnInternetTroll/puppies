@@ -180,7 +180,6 @@ body {
 			/* Standard */
 			width: fit-content;
 			height: fit-content;
-			transform-origin: top;
 			transition: transform 0.5s ease-in-out;
 			z-index: 1;
 			img {
@@ -194,16 +193,19 @@ body {
 			z-index: 10;
 		}
 		#top1 {
+			transform-origin: top;
 			grid-column: 2 / 2;
 			background-color: yellow;
 		}
 		#top2 {
+			transform-origin: top right;
 			grid-column: 1 / 1;
 			top: 5rem;
 			/* float: left; */
 			background-color: blue;
 		}
 		#top3 {
+			transform-origin: top left;
 			grid-column: 3 / 3;
 			top: 8rem;
 			/* float: right; */
@@ -236,5 +238,8 @@ body {
 		height: 3rem;
 		text-align: center;
 		font-size: 10px;
+		a {
+			color: #ffffff;
+		}
 	}
 }

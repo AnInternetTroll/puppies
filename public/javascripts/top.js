@@ -9,6 +9,9 @@ fetch("https://dog.ceo/api/breeds/image/random/3", { cors: "cors" })
 		for (const i in data.message) {
 			const img = document.createElement("IMG");
 			img.setAttribute("src", data.message[i]);
-			tops[i].appendChild(img);
+			const a = document.createElement("A");
+			a.setAttribute("href", data.message[i])
+			a.appendChild(img)
+			tops[i].appendChild(a);
 		}
 	});

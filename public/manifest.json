@@ -1,0 +1,21 @@
+{
+	"start_url": "/",
+	"name": "Puppies leaderboard: the recockning",
+	"manifest_version": 1,
+	"background_color": "#4a4a4d",
+	"theme_color": "#007bff",
+	"short_name": "Puppies",
+	"display": "fullscreen",
+	"description": "Puppies!",
+	"lang": "en",
+	"scope": "/",
+	"orientation": "portrait-primary",
+	"dir": "ltr",
+	"icons": [
+		{
+			"src": "/favicon.ico",
+			"sizes": "256x256",
+			"type": "image/ico"
+		}
+	]
+}

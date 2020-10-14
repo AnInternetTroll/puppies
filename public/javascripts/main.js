@@ -1,3 +1,18 @@
+if ("serviceWorker" in navigator) {
+	// Register a service worker hosted at the root of the
+	// site using the default scope.
+	navigator.serviceWorker.register("/javascripts/sw.js").then(
+		(registration) => {
+			console.log("Service worker registration succeeded:", registration);
+		},
+		/*catch*/ (error) => {
+			console.log("Service worker registration failed:", error);
+		}
+	);
+} else {
+	console.log("Service workers are not supported.");
+}
+
 // Color changing
 function colorChange() {
 	//Find the button which will be checked if it's checked or not
